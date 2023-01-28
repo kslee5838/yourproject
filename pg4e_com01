@@ -1,0 +1,9 @@
+# Creating a User and Database
+postgres=# CREATE USER  WITH PASSWORD 'secret';
+CREATE ROLE
+postgres=# CREATE DATABASE people WITH OWNER '';
+CREATE DATABASE
+postgres=# \q
+
+- https://www.postgresql.org/docs/11/sql-createuser.html
+- https://www.postgresql.org/docs/11/sql-createdatabase.html
