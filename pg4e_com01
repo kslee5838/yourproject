@@ -5,10 +5,10 @@ postgres=# CREATE DATABASE people WITH OWNER '';
 CREATE DATABASE
 postgres=# \q
 
-- https://www.postgresql.org/docs/11/sql-createuser.html
-- https://www.postgresql.org/docs/11/sql-createdatabase.html
+#- https://www.postgresql.org/docs/11/sql-createuser.html
+#- https://www.postgresql.org/docs/11/sql-createdatabase.html
 
-화면모양
+#화면모양
 $ psql people 
 Password for user : <password here> 
 psql (9.3.5, server 11.2)
@@ -16,4 +16,4 @@ psql (9.3.5, server 11.2)
 people=> \dt
 No relations found.
 people=> 
-*Not a Super User Prompt
+#*Not a Super User Prompt
