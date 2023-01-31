@@ -30,4 +30,51 @@ SELECT make.name, model.name
 
 #display below
 
+#Question 2 answer
+INSERT INTO studentl(name) VALUES ('Eubh');
+INSERT INTO studentl(name) VALUES ('Courtney');
+INSERT INTO studentl(name) VALUES ('Ifra');
+INSERT INTO studentl(name) VALUES ('Misha');
+INSERT INTO studentl(name) VALUES ('Stewart');
+INSERT INTO studentl(name) VALUES ('Abaigeal');
+INSERT INTO studentl(name) VALUES ('Carra');
+INSERT INTO studentl(name) VALUES ('Kaine');
+INSERT INTO studentl(name) VALUES ('Kelso');
+INSERT INTO studentl(name) VALUES ('Missy');
+INSERT INTO studentl(name) VALUES ('Sabah');
+INSERT INTO studentl(name) VALUES ('Bendeguz');
+INSERT INTO studentl(name) VALUES ('Mahdiya');
+INSERT INTO studentl(name) VALUES ('Rhett');
+INSERT INTO studentl(name) VALUES ('Seb');
 
+INSERT INTO course(title) VALUES ('si106');
+INSERT INTO course(title) VALUES ('si106');
+INSERT INTO course(title) VALUES ('si106');
+INSERT INTO course(title) VALUES ('si106');
+INSERT INTO course(title) VALUES ('si106');
+INSERT INTO course(title) VALUES ('si110');
+INSERT INTO course(title) VALUES ('si110');
+INSERT INTO course(title) VALUES ('si110');
+INSERT INTO course(title) VALUES ('si110');
+INSERT INTO course(title) VALUES ('si110');
+INSERT INTO course(title) VALUES ('si206');
+INSERT INTO course(title) VALUES ('si206');
+INSERT INTO course(title) VALUES ('si206');
+INSERT INTO course(title) VALUES ('si206');
+INSERT INTO course(title) VALUES ('si206');
+
+INSERT INTO roster(role,student_id,course_id) VALUES ('0','1','1');
+INSERT INTO roster(role,student_id,course_id) VALUES ('1','2','1');
+INSERT INTO roster(role,student_id,course_id) VALUES ('1','3','1');
+INSERT INTO roster(role,student_id,course_id) VALUES ('1','4','1');
+INSERT INTO roster(role,student_id,course_id) VALUES ('1','5','1');
+INSERT INTO roster(role,student_id,course_id) VALUES ('0','6','2');
+INSERT INTO roster(role,student_id,course_id) VALUES ('1','7','2');
+INSERT INTO roster(role,student_id,course_id) VALUES ('1','8','2');
+INSERT INTO roster(role,student_id,course_id) VALUES ('1','9','2');
+INSERT INTO roster(role,student_id,course_id) VALUES ('1','10','2');
+INSERT INTO roster(role,student_id,course_id) VALUES ('0','11','3');
+INSERT INTO roster(role,student_id,course_id) VALUES ('1','12','3');
+INSERT INTO roster(role,student_id,course_id) VALUES ('1','13','3');
+INSERT INTO roster(role,student_id,course_id) VALUES ('1','14','3');
+INSERT INTO roster(role,student_id,course_id) VALUES ('1','15','3');
