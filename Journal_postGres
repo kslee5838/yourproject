@@ -63,3 +63,9 @@ FROM story
     JOIN event ON story.event_id = event.id 
     ;
 =====끝
+---- 시작
+
+ALTER TABLE story ADD COLUMN dday TEXT;
+INSERT INTO story(blabla,event_id,weather_id,dday) VALUES('가고싶어','1','1','토');
+====끝
+
