@@ -1,0 +1,2 @@
+psql 리드파일 \i
+postGres 에서 파일복사 \copy
