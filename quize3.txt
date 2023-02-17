@@ -22,7 +22,13 @@ CREATE TABLE region (
   PRIMARY KEY(id)
 );
 
-CREATE TABLE unesco(id SERIAL, PRIMARY KEY(id), category TEXT, category_id INTEGER, UNIQUE(category,category_id));
+CREATE TABLE unesco(
+  id SERIAL, 
+  PRIMARY KEY(id), 
+  category TEXT, 
+  category_id INTEGER, 
+  UNIQUE(category,category_id)
+  );
 
 SELECT DISTINCT category FROM unesco_raw;
 INSERT INTO category(name) SELECT DISTINCT category FROM unesco_raw;
