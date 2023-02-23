@@ -22,6 +22,7 @@ CREATE TABLE tracktoartist (
   id SERIAL,
   title VARCHAR(128),
   artist_id INTEGER REFERENCES artist(id) ON DELETE CASCADE,
+  tracK_id INTEGER REFERENCES track(id) ON DELETE CASCADE, 
   UNIQUE(title, artist_id),
   PRIMARY KEY(id)
 );
@@ -39,4 +40,7 @@ INSERT INTO track (title, album_id) SELECT title, album_id FROM track_raw;
 INSERT INTO artist(title) SELECT DISTINCT artist FROM track_raw;
 UPDATE track_raw SET artist_id = (SELECT artist.id FROM artist WHERE artist.title = track_raw.artist);
 INSERT INTO tracktoartist (title, artist_id) SELECT title, artist_id FROM track_raw;
+
+INSERT INTO track(title) SELECT DISTINCT title FROM track_raw;
+UPDATE track_raw SET track_id = (SELECT track.id FROM track WHERE track.title = track_raw.title);
 
