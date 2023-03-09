@@ -62,4 +62,9 @@ CREATE TABLE y (id SERIAL, PRIMARY KEY(id), y TEXT);
 CREATE TABLE xy(id SERIAL, PRIMARY KEY(id), x TEXT, y_id INTEGER, UNIQUE(x,y_id));
 INSERT INTO y (y) SELECT DISTINCT y FROM xy_raw;
 
-UPDATE xy_raw SET y_id = (SELECT y.id FROM y WHERE y.y = xy_raw.y);
+UPDATE yourfriends SET 모임종류_id = (SELECT 모임종류.id FROM 모임종류 WHERE 모임종류.모임종류 = yourfriends.모임종류);
+UPDATE yourfriends SET 직업_id = (SELECT 직업.id FROM 직업 WHERE 직업.직업 = yourfriends.직업);
+UPDATE yourfriends SET 언제어디서_id = (SELECT 언제어디서.id FROM 언제어디서 WHERE 언제어디서.언제어디서 = yourfriends.언제어디서);
+UPDATE yourfriends SET 기간_id = (SELECT 기간.id FROM 기간 WHERE 기간.기간 = yourfriends.기간);
+
+# 이걸 왜 만들 었을 까? 쾌스쳔 INSERT INTO xy (x, y_id) SELECT x, y_id FROM xy_raw;
