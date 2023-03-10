@@ -67,23 +67,28 @@ UPDATE yourfriends SET 직업_id = (SELECT 직업.id FROM 직업 WHERE 직업.�
 UPDATE yourfriends SET 언제어디서_id = (SELECT 언제어디서.id FROM 언제어디서 WHERE 언제어디서.언제어디서 = yourfriends.언제어디서);
 UPDATE yourfriends SET 기간_id = (SELECT 기간.id FROM 기간 WHERE 기간.기간 = yourfriends.기간);
 
+                      
+ CREATE TABLE 너와관계(
+  id SERIAL, 
+  PRIMARY KEY(id), 
+  이름 TEXT, 
+  모임종류_id INTEGER, 
+  직업_id INTEGER,
+  언제어디서_id INTEGER,
+  기간_id INTEGER
+   );
 
-DROP TABLE 모임종류와모임종류_id;
-DROP TABLE 직업과직업_ID;
-DROP TABLE 언제어디서와언제어디서_id;
-DROP TABLE 기간과기간_id;
+INSERT INTO 너와관계 (이름, 모임종류_id,직업_id,언제어디서_id,기간_id) SELECT 이름, 모임종류_id,직업_id,언제어디서_id,기간_id FROM yourfriends;
 
-CREATE TABLE 모임종류와모임종류_id(id SERIAL, PRIMARY KEY(id), 모임종류 TEXT, 모임종류_id INTEGER );
-CREATE TABLE 직업과직업_id(id SERIAL, PRIMARY KEY(id), 직업 TEXT, 직업_id INTEGER);
-CREATE TABLE 언제어디서와언제어디서_id(id SERIAL, PRIMARY KEY(id), 언제어디서 TEXT, 언제어디서_id INTEGER);
-CREATE TABLE 기간과기간_id(id SERIAL, PRIMARY KEY(id), 기간 TEXT, 기간_id INTEGER);
-                      
-INSERT INTO 모임종류와모임종류_id (모임종류, 모임종류_id) SELECT 모임종류, 모임종류_id FROM yourfriends;
-INSERT INTO 직업과직업_id (직업, 직업_id) SELECT 직업, 직업_id FROM yourfriends;
-INSERT INTO 언제어디서와언제어디서_id (언제어디서, 언제어디서_id) SELECT 언제어디서, 언제어디서_id FROM yourfriends;
-INSERT INTO 기간과기간_id(기간, 기간_id) SELECT 기간, 기간_id FROM yourfriends;
-                      
-                      
+
+SELECT 너와관계.이름, 모임종류.모임종류,직업.직업,언제어디서.언제어디서,기간.기간
+  FROM 너와관계
+  JOIN 모임종류 ON 모임종류_id = 모임종류.id
+  JOIN 직업 ON 직업_id = 직업.id
+  JOIN 언제어디서 ON 언제어디서_id=언제어디서.id
+  JOIN 기간 ON 기간_id=기간.id
+  ORDER BY 너와관계.이름
+  LIMIT 3;                     
                       
                       
                       
