@@ -67,4 +67,23 @@ UPDATE yourfriends SET 직업_id = (SELECT 직업.id FROM 직업 WHERE 직업.�
 UPDATE yourfriends SET 언제어디서_id = (SELECT 언제어디서.id FROM 언제어디서 WHERE 언제어디서.언제어디서 = yourfriends.언제어디서);
 UPDATE yourfriends SET 기간_id = (SELECT 기간.id FROM 기간 WHERE 기간.기간 = yourfriends.기간);
 
-# 이걸 왜 만들 었을 까? 쾌스쳔 INSERT INTO xy (x, y_id) SELECT x, y_id FROM xy_raw;
+
+DROP TABLE 모임종류와모임종류_id;
+DROP TABLE 직업과직업_ID;
+DROP TABLE 언제어디서와언제어디서_id;
+DROP TABLE 기간과기간_id;
+
+CREATE TABLE 모임종류와모임종류_id(id SERIAL, PRIMARY KEY(id), 모임종류 TEXT, 모임종류_id INTEGER );
+CREATE TABLE 직업과직업_id(id SERIAL, PRIMARY KEY(id), 직업 TEXT, 직업_id INTEGER);
+CREATE TABLE 언제어디서와언제어디서_id(id SERIAL, PRIMARY KEY(id), 언제어디서 TEXT, 언제어디서_id INTEGER);
+CREATE TABLE 기간과기간_id(id SERIAL, PRIMARY KEY(id), 기간 TEXT, 기간_id INTEGER);
+                      
+INSERT INTO 모임종류와모임종류_id (모임종류, 모임종류_id) SELECT 모임종류, 모임종류_id FROM yourfriends;
+INSERT INTO 직업과직업_id (직업, 직업_id) SELECT 직업, 직업_id FROM yourfriends;
+INSERT INTO 언제어디서와언제어디서_id (언제어디서, 언제어디서_id) SELECT 언제어디서, 언제어디서_id FROM yourfriends;
+INSERT INTO 기간과기간_id(기간, 기간_id) SELECT 기간, 기간_id FROM yourfriends;
+                      
+                      
+                      
+                      
+                      
