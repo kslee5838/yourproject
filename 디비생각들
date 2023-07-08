@@ -12,3 +12,18 @@ CREATE TABLE users (
   PRIMARY KEY(id)
 );     
 
+[화면캡쳐 1] psql 관리자모드 접속
+Server [localhost]:
+Database [postgres]: postgres
+Port [5432]:
+Username [postgres]: postgres
+psql (15.1)
+도움말을 보려면 "help"를 입력하십시오.
+
+postgres=#
+
+[화면캡쳐 2] db: postgres Username : kslee5838 Password : 없음
+postgres=>   (프롬프트 모양)
+
+[화면캡쳐 3] db: people   Username : kslee5838 Password : secret
+people =>  (프롬프트모양)
