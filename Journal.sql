@@ -8,6 +8,9 @@
 ## 참조 : 미시간 대학교 DR.Chuck 수업
 
 ===**** 시작
+DROP table event CASCADE;
+DROP table story CASCADE;
+DROP table weather CASCADE;
 
 CREATE TABLE event (
   id SERIAL,
@@ -17,7 +20,7 @@ CREATE TABLE event (
 
 CREATE TABLE weather (
   id SERIAL,
-  condition VARCHAR(128) UNIQUE,
+  condition_ VARCHAR(128) UNIQUE,
   PRIMARY KEY(id)
 );
 
@@ -33,8 +36,8 @@ CREATE TABLE story (
 INSERT INTO event (mood) VALUES ('good');
 INSERT INTO event (mood) VALUES ('fell bad');
 
-INSERT INTO weather (condition) VALUES ('Sunny Day');
-INSERT INTO weather (condition) VALUES ('Rainy');
+INSERT INTO weather (condition_) VALUES ('Sunny Day');
+INSERT INTO weather (condition_) VALUES ('Rainy');
 
 INSERT INTO story (blabla, event_id, weather_id) 
     VALUES ('이게 될려나', 2, 1) ;
@@ -51,13 +54,13 @@ INSERT INTO story (blabla, event_id, weather_id)
 #SELECT album.title, album.artist_id, artist.id, artist.name 
   #  FROM album INNER JOIN artist ON album.artist_id = artist.id;
 
-SELECT story.blabla, story.weather_id, weather.id, weather.condition 
+SELECT story.blabla, story.weather_id, weather.id, weather.condition_ 
     FROM story CROSS JOIN weather;
 
-SELECT story.blabla, weather.condition FROM story JOIN weather 
+SELECT story.blabla, weather.condition_ FROM story JOIN weather 
     ON track.wearher_id = weather.id;
 
-SELECT story.blabla, event.mood, weather.condition 
+SELECT story.blabla, event.mood, weather.condition_ 
 FROM story 
     JOIN weather ON story.weather_id = weather.id 
     JOIN event ON story.event_id = event.id 
