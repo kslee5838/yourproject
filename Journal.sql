@@ -72,3 +72,19 @@ ALTER TABLE story ADD COLUMN dday TEXT;
 INSERT INTO story(blabla,event_id,weather_id,dday) VALUES('가고싶어','1','1','토');
 ====끝
 
+--- 시작, 2024-06-04
+DROP TABLE story CASCADE;
+
+CREATE TABLE story (
+    id SERIAL,
+    dddate DATE NOT NULL,
+    blabla VARCHAR(128),
+    event_id INTEGER REFERENCES event(id) ON DELETE CASCADE,
+    weather_id INTEGER REFERENCES weather(id) ON DELETE CASCADE,
+    UNIQUE(blabla, event_id),
+    PRIMARY KEY(id)
+);
+
+INSERT INTO story (dddate ,blabla, event_id, weather_id) 
+    VALUES ('2024-06-04','오늘 화요일', 2, 1) ;
+===끝
