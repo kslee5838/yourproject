@@ -1,0 +1,14 @@
+<sql화면>
+UPDATE chima.songs SET gengre="Hip-Hop/Rap" WHERE id = 1443; 
+
+<bash화면>
+mysql -h kslee5838.mysql.pythonanywhere-services.com -u kslee5838 'kslee5838$default' -p --local-infile=1
+
+<sql화면>
+LOAD DATA INFILE "/home/kslee5838/Shazam_25Feb20.csv" 
+
+mysql> LOAD DATA LOCAL INFILE '/home/kslee5838/Shazam_25Feb20.csv' INTO TABLE `kslee5838$default`.`Shazam` CHARACTER SET latin1 FIELDS TERMINATED BY ','  ENC
+LOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS;
+
+mysql> LOAD DATA LOCAL INFILE '/home/kslee5838/DrChuck/library.csv' INTO TABLE `kslee5838$default`.`track` CHARACTER SET latin1 FIELDS TERMINATED BY ','  ENC
+LOSED BY '"' LINES TERMINATED BY '\n' IGNORE 1 ROWS;
