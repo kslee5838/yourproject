@@ -1,5 +1,6 @@
 
 -- if file saved on pythonanywhere.com, upload to mysql
+-- 중요// -p --local-infile=1
 
 (bash)
 09:32 ~ $ mysql -h kslee5838.mysql.pythonanywhere-services.com -u kslee5838 'kslee5838$default' -p --local-infile=1
