@@ -27,3 +27,32 @@ FIELDS TERMINATED BY ','
 ENCLOSED BY '"'   
 LINES TERMINATED BY '\n'   
 IGNORE 2 LINES;
+
+
+## 2025.10.11
+CREATE TABLE Shazam_Oct (
+    id SERIAL,
+    TagTime DATE,           -- Matches the CSV column name/data type (2022-06-15)
+    title VARCHAR(128),
+    artist VARCHAR(128),
+    URL VARCHAR(255),       -- Increased size for long URLs
+    TrackKey VARCHAR(20),   -- Matches the CSV column name/data type (610472974)
+    PRIMARY KEY(id)
+);
+
+
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/shazamlibrary_October.csv'
+INTO TABLE Shazam_Oct
+CHARACTER SET 'utf8mb4'
+FIELDS TERMINATED BY ','
+ENCLOSED BY '\"'
+LINES TERMINATED BY '\n'  -- Changed back to simple newline
+IGNORE 1 ROWS
+(
+    @dummy_index,
+    TagTime,
+    title,
+    artist,
+    URL,
+    TrackKey
+);
