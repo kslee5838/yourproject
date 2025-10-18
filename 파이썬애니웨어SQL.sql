@@ -30,7 +30,9 @@ IGNORE 2 LINES;
 
 
 ## 2025.10.11
-CREATE TABLE Shazam_Oct (
+
+    Drop table Shazam_Oct;
+    CREATE TABLE Shazam_Oct (
     id SERIAL,
     TagTime DATE,           -- Matches the CSV column name/data type (2022-06-15)
     title VARCHAR(128),
@@ -38,8 +40,7 @@ CREATE TABLE Shazam_Oct (
     URL VARCHAR(255),       -- Increased size for long URLs
     TrackKey VARCHAR(20),   -- Matches the CSV column name/data type (610472974)
     PRIMARY KEY(id)
-);
-
+    );
 
 LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/shazamlibrary_October.csv'
 INTO TABLE Shazam_Oct
