@@ -25,3 +25,14 @@ VALUES
   ('2025-07-05','토','좋은사람들', '진동면 아침가리', '재순','#','#')
   ;
 
+* create dump file (17 Jan 2026 작성)
+11:58 ~ $ mysqldump -u kslee5838 -h kslee5838.mysql.pythonanywhere-services.com -p --no-tablespaces --column-statistics=0 'kslee5838$default' > ~/back
+ups/yourtrekking_2026-01-17.sql
+12:01 ~ $ ls
+ConnectToPython  Shazam_22Feb2025.txt       Shazamlibrary_October_with_YT.csv  enrich_playlist.py  mytrekking
+DrChuck          Shazam_25Feb20.csv         backups                            hi.py               newsite
+README.txt       Shazamlibrary_October.csv  cache                              library.csv         shazamlibrary.csv
+12:01 ~ $ cd backups
+12:02 ~/backups $ ls
+yourtrekking_2026-01-13.sql  yourtrekking_2026-01-17.sql
+
